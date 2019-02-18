@@ -1,0 +1,26 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>Headlines</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-refresher slot="fixed" (ionRefresh)="onHeadlinesRefresh($event)">
+        <ion-refresher-content></ion-refresher-content>
+    </ion-refresher>
+    <ion-grid>
+        <ion-row>
+            <ion-col>
+                <ion-slides #mySlider>
+                    <ion-slide *ngFor="let category of categories">
+                        <ion-chip [color]="'primary'" class="category" (click)="onGetCategoryData(category)">
+                            <ion-label>{{category}}</ion-label>
+                        </ion-chip>
+                    </ion-slide>
+                </ion-slides>
+
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+    <app-articles [news]="news"></app-articles>
+</ion-content>

@@ -1,0 +1,9 @@
+/node_modules
+.DS_Store
+.sourcemaps
+www
+.idea
+/platforms/
+platforms
+plugins
+e2e
